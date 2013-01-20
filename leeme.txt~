@@ -1,0 +1,15 @@
+
+Preparación:
+Inserta las fotos de los usuarios con los que quieras entrenar al programa en bd/usuario1, bd/usuario2, etc. Cada carpeta representará una persona.
+
+$ python create_csv.py bd > csv.txt
+
+Compilación:
+$ g++ -ggdb `pkg-config --cflags opencv` -o `basename entrenar.cpp .cpp` entrenar.cpp `pkg-config --libs opencv`
+
+$ g++ -ggdb `pkg-config --cflags opencv` -o `basename reconocer.cpp .cpp` reconocer.cpp `pkg-config --libs opencv`
+
+Ejecución:
+$ ./entrenar csv.txt
+
+$ ./reconocer
